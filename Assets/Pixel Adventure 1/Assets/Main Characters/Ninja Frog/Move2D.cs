@@ -44,7 +44,9 @@ public class Move2D : MonoBehaviour
      *
      * */
     void updateDirection(Vector3 movementVector) {
-        if (movementVector.x >= 0) {
+        Debug.Log("updating direction");
+        Debug.Log(movementVector);
+        if (movementVector.x > 0) {
             direction = 1;
         }
         else if (movementVector.x < 0) {
