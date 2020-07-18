@@ -10,6 +10,10 @@ public class Move2D : MonoBehaviour
     // mouse targeting
     private Vector3 target;
 
+
+    // player attributes
+    public int health = 3;
+
     // movement state bools
     public bool isGrounded = false;
     public bool inFirstJump = false;
@@ -55,8 +59,6 @@ public class Move2D : MonoBehaviour
      *
      * */
     void updateDirection(Vector3 movementVector) {
-        Debug.Log("updating direction");
-        Debug.Log(movementVector);
         if (movementVector.x > 0) {
             direction = 1;
         }

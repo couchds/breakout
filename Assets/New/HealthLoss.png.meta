@@ -177,7 +177,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -198,7 +198,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 64
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -219,7 +219,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -239,8 +239,8 @@ TextureImporter:
       name: HealthLoss_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 96
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -260,8 +260,8 @@ TextureImporter:
       name: HealthLoss_4
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 128
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -281,8 +281,8 @@ TextureImporter:
       name: HealthLoss_5
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
+        x: 160
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -302,7 +302,7 @@ TextureImporter:
       name: HealthLoss_6
       rect:
         serializedVersion: 2
-        x: 0
+        x: 192
         y: 0
         width: 32
         height: 32
@@ -323,7 +323,7 @@ TextureImporter:
       name: HealthLoss_7
       rect:
         serializedVersion: 2
-        x: 32
+        x: 224
         y: 0
         width: 32
         height: 32
@@ -344,7 +344,7 @@ TextureImporter:
       name: HealthLoss_8
       rect:
         serializedVersion: 2
-        x: 64
+        x: 256
         y: 0
         width: 32
         height: 32
