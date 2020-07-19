@@ -18,6 +18,8 @@ public class Move2D : MonoBehaviour
     public bool isGrounded = false;
     public bool inFirstJump = false;
     
+    public bool isHarmed = false;
+
     // movement speeds
     public float moveSpeed = 3f;
     public float jumpSpeed = 30f;
