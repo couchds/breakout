@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Move2D : MonoBehaviour
@@ -17,7 +18,8 @@ public class Move2D : MonoBehaviour
     // movement state bools
     public bool isGrounded = false;
     public bool inFirstJump = false;
-    
+    public bool facingRight = true;
+
     public bool isHarmed = false;
 
     // movement speeds
@@ -30,6 +32,10 @@ public class Move2D : MonoBehaviour
 
     // +1 for right, -1 for left, 0 for no direction
     public int direction = 1;
+
+    // canvas-related elements. possibly move these to canvas controller.
+    public Text txt;
+
 
     // Start is called before the first frame update
     void Start()
@@ -55,19 +61,42 @@ public class Move2D : MonoBehaviour
 
     }
 
+
     /*  updateDirection
      *  Called during the Update loop.
      *  Checks the direction of the Player character and sets the public direction property accordingly.
      *
      * */
     void updateDirection(Vector3 movementVector) {
+        if (movementVector.x > 0 && !facingRight) {
+            Flip();
+        } else if (movementVector.x < 0 && facingRight) {
+            Flip();
+        }
+        /*
+        Vector3 playerLocalScale = transform.localScale;
         if (movementVector.x > 0) {
+            if (direction != 1) {
+                playerLocalScale.x *= -1;
+            }
             direction = 1;
         }
         else if (movementVector.x < 0) {
             direction = -1;
+            if (direction != -1) {
+                playerLocalScale.x *= -1;
+            }
         }
-        animator.SetInteger("XDirection", direction);
+        transform.localScale = playerLocalScale;
+        //animator.SetInteger("XDirection", direction);
+        */
+    }
+
+    private void Flip() {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 
     void handleMouseClick() {
@@ -84,7 +113,6 @@ public class Move2D : MonoBehaviour
     void Jump () {
         // if the user is on the ground, they should be able to jump.
         if (Input.GetButtonDown("Jump") && isGrounded == true) {
-            Debug.Log("here!!!");
             animator.SetBool("IsJumping", true);
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 4f), ForceMode2D.Impulse);
             inFirstJump = true;
@@ -96,9 +124,14 @@ public class Move2D : MonoBehaviour
         }
     }
 
+    public void ChangeInstructionText (string newText) {
+        txt = GameObject.Find("Instruction").GetComponent<UnityEngine.UI.Text>();
+        txt.text = newText;
+    }
+
     void FireProjectile () {
         if (Input.GetButtonDown("Fire1")) {
-            
+
         }
     }
 }

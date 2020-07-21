@@ -26,7 +26,6 @@ public class Harmed : MonoBehaviour
             if (Player.GetComponent<Move2D>().isHarmed == false) {
                 int initialHealth = Player.GetComponent<Move2D>().health;
                 Player.GetComponent<Move2D>().health -= 1;
-                Debug.Log("Here!");
                 //GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>().transform.Find("Health3").gameObject.GetComponent<Health3Controller>().triggerHealthLoss();
                 canvas = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>();
                 string objectName = "Health" + initialHealth.ToString();
